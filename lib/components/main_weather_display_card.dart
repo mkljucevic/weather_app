@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
 class MainWeatherDisplayCard extends StatelessWidget {
@@ -6,8 +7,6 @@ class MainWeatherDisplayCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: 150,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -33,7 +32,19 @@ class MainWeatherDisplayCard extends StatelessWidget {
                 ),
                 Image.asset('assets/heavy-rain.png'),
               ],
-            )
+            ),
+            Center(
+              child: DotsIndicator(
+                dotsCount: 4,
+                position: 0,
+                decorator: const DotsDecorator(
+                  size: Size(6, 6),
+                  activeSize: Size(9, 9),
+                  color: Colors.grey, // Inactive color
+                  activeColor: Colors.black,
+                ),
+              ),
+            ),
           ],
         ),
       ),

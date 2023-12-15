@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
+  final PageController controller = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,20 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 20),
-              const MainWeatherDisplayCard(),
+              Container(
+                height: 170,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: PageView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    MainWeatherDisplayCard(),
+                    MainWeatherDisplayCard(),
+                    MainWeatherDisplayCard(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
