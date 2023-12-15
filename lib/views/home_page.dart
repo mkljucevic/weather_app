@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/components/main_weather_display_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfff3f3f3),
       key: scaffoldKey,
       drawer: const Drawer(),
       body: SafeArea(
@@ -34,6 +36,8 @@ class _HomePageState extends State<HomePage> {
                   const Icon(Icons.settings),
                 ],
               ),
+              const SizedBox(height: 20),
+              const MainWeatherDisplayCard(),
             ],
           ),
         ),
