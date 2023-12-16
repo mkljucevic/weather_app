@@ -44,7 +44,7 @@ class MainWeatherDisplayCard extends StatelessWidget {
                 position: 0,
                 decorator: const DotsDecorator(
                   size: Size(6, 6),
-                  activeSize: Size(9, 9),
+                  activeSize: Size(6, 6),
                   color: Colors.grey, // Inactive color
                   activeColor: Colors.black,
                 ),

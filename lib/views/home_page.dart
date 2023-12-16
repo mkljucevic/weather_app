@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:weather_app/components/daily_forecast_card.dart';
 import 'package:weather_app/components/hourly_forecast_card.dart';
 import 'package:weather_app/components/main_weather_display_card.dart';
