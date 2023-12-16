@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MainWeatherDisplayCard extends StatelessWidget {
   const MainWeatherDisplayCard({super.key});
@@ -30,7 +31,11 @@ class MainWeatherDisplayCard extends StatelessWidget {
                     Text('Prague'),
                   ],
                 ),
-                Image.asset('assets/heavy-rain.png'),
+                SvgPicture.asset(
+                  'assets/rain.svg',
+                  width: 75,
+                  height: 75,
+                ),
               ],
             ),
             Center(

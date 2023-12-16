@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HourlyForecastCard extends StatelessWidget {
   const HourlyForecastCard({super.key});
@@ -18,9 +19,10 @@ class HourlyForecastCard extends StatelessWidget {
             '07:00',
             style: TextStyle(fontSize: 10),
           ),
-          Image.asset(
-            'assets/heavy-rain.png',
-            scale: 2.8,
+          SvgPicture.asset(
+            'assets/rain.svg',
+            width: 23,
+            height: 23,
           ),
           const Text('17°'),
           Row(
