@@ -23,9 +23,15 @@ class HourlyForecastCard extends StatelessWidget {
             scale: 2.8,
           ),
           const Text('17°'),
-          const Text(
-            '100%',
-            style: TextStyle(fontSize: 10),
+          Row(
+            children: [
+              Image.asset('assets/raindrop.png', scale: 3.5),
+              const SizedBox(width: 2),
+              const Text(
+                '100%',
+                style: TextStyle(fontSize: 10),
+              ),
+            ],
           ),
         ],
       ),
