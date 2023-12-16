@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/components/hourly_forecast_card.dart';
 import 'package:weather_app/components/main_weather_display_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,11 +46,28 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: PageView(
                   scrollDirection: Axis.horizontal,
-                  children: [
+                  children: const [
                     MainWeatherDisplayCard(),
                     MainWeatherDisplayCard(),
                     MainWeatherDisplayCard(),
                   ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                height: 110,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return const Padding(
+                      padding: EdgeInsets.only(right: 10),
+                      child: HourlyForecastCard(),
+                    );
+                  },
                 ),
               ),
             ],
