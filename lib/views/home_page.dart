@@ -40,19 +40,20 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20),
               Container(
-                height: 170,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: PageView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    MainWeatherDisplayCard(),
-                    MainWeatherDisplayCard(),
-                    MainWeatherDisplayCard(),
-                  ],
-                ),
-              ),
+                  height: 170,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: PageView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                    itemBuilder: (context, index) {
+                      return const Padding(
+                        padding: EdgeInsets.only(right: 10),
+                        child: MainWeatherDisplayCard(),
+                      );
+                    },
+                  )),
               const SizedBox(height: 20),
               Container(
                 height: 110,
