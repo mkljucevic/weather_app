@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:weather_app/components/daily_forecast_card.dart';
 import 'package:weather_app/components/hourly_forecast_card.dart';
 import 'package:weather_app/components/main_weather_display_card.dart';
 import 'package:weather_app/components/sunset_sunrise_card.dart';
@@ -84,6 +85,11 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.symmetric(horizontal: 15.0),
               child: SunriseSunsetCard(),
             ),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              child: DailyForecastCard(),
+            )
           ],
         ),
       ),
