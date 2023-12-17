@@ -42,49 +42,46 @@ class SideDrawer extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              Column(
+              const Column(
                 children: [
-                  Row(
-                    children: [
-                      const SizedBox(width: 31),
-                      const Icon(
-                        Icons.location_on,
-                        size: 15,
-                      ),
-                      const Text('Prague'),
-                      const Spacer(),
-                      SvgPicture.asset(
-                        'assets/sun.svg',
-                        width: 20,
-                        height: 20,
-                      ),
-                      const Text('24°')
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      const SizedBox(width: 31),
-                      const Icon(
-                        Icons.location_on,
-                        size: 15,
-                      ),
-                      const Text('Ankara'),
-                      const Spacer(),
-                      SvgPicture.asset(
-                        'assets/rain.svg',
-                        width: 20,
-                        height: 20,
-                      ),
-                      const Text('10°')
-                    ],
-                  ),
+                  FavLocationRow(),
+                  SizedBox(height: 10),
+                  FavLocationRow(),
+                  SizedBox(height: 10),
+                  FavLocationRow(),
                 ],
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class FavLocationRow extends StatelessWidget {
+  const FavLocationRow({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const SizedBox(width: 31),
+        const Icon(
+          Icons.location_on,
+          size: 15,
+        ),
+        const Text('Prague'),
+        const Spacer(),
+        SvgPicture.asset(
+          'assets/sun.svg',
+          width: 20,
+          height: 20,
+        ),
+        const Text('24°')
+      ],
     );
   }
 }
