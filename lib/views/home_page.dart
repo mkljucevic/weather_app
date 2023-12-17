@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff3f3f3),
+      //backgroundColor: const Color(0xfff3f3f3),
       key: scaffoldKey,
       drawer: const SideDrawer(),
       body: SafeArea(
