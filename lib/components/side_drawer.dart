@@ -17,8 +17,10 @@ class SideDrawer extends StatelessWidget {
           child: Column(
             children: [
               TextField(
-                //style: const TextStyle(fontSize: 12.0, color: Colors.black),
+                style: const TextStyle(fontSize: 14.0, color: Colors.black),
                 decoration: InputDecoration(
+                    contentPadding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                     enabledBorder: OutlineInputBorder(
                       borderSide:
                           const BorderSide(color: Colors.white, width: 0.0),
@@ -101,6 +103,7 @@ class FavLocationRow extends StatelessWidget {
           Icons.location_on,
           size: 15,
         ),
+        const SizedBox(width: 5),
         const Text('Prague'),
         const Spacer(),
         SvgPicture.asset(
@@ -108,6 +111,7 @@ class FavLocationRow extends StatelessWidget {
           width: 20,
           height: 20,
         ),
+        const SizedBox(width: 5),
         const Text('24°')
       ],
     );
