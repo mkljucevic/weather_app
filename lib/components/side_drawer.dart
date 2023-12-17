@@ -78,7 +78,7 @@ class SideDrawer extends StatelessWidget {
                     Icon(Icons.tune),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
