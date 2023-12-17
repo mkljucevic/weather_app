@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:weather_app/views/manage_locations_page.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({
@@ -38,7 +39,12 @@ class SideDrawer extends StatelessWidget {
                 children: [
                   Icon(Icons.star),
                   SizedBox(width: 10),
-                  Text('Favorite Locations'),
+                  Text(
+                    'Favourite Locations',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 10),
@@ -51,6 +57,28 @@ class SideDrawer extends StatelessWidget {
                   FavLocationRow(),
                 ],
               ),
+              const SizedBox(height: 30),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ManageLocationsPage()),
+                  );
+                },
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Menage Locations',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Icon(Icons.tune),
+                  ],
+                ),
+              )
             ],
           ),
         ),
