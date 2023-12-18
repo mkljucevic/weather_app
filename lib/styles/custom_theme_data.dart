@@ -30,6 +30,7 @@ final ThemeData cLightThemeData = ThemeData(
     bodySmall: TextStyle(
       fontSize: 10,
       color: cTextColorLight,
+      fontWeight: FontWeight.w400,
     ),
 
     // medium app font

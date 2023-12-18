@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:weather_app/styles/colors.dart';
 import 'package:weather_app/views/manage_locations_page.dart';
 
 class SideDrawer extends StatelessWidget {
@@ -10,42 +11,54 @@ class SideDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: const Color(0xfff3f3f3),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
               TextField(
-                style: const TextStyle(fontSize: 14.0, color: Colors.black),
+                cursorColor: cBlue1,
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Theme.of(context).textTheme.bodyMedium?.color),
                 decoration: InputDecoration(
                     contentPadding:
                         const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                     enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: Colors.white, width: 0.0),
+                      borderSide: BorderSide(
+                          color: Theme.of(context).scaffoldBackgroundColor,
+                          width: 0.0),
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: Colors.white, width: 0.0),
+                      borderSide: BorderSide(
+                          color: Theme.of(context).scaffoldBackgroundColor,
+                          width: 0.0),
                       borderRadius: BorderRadius.circular(30.0),
                     ),
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).cardColor,
                     filled: true,
-                    prefixIcon: const Icon(Icons.search),
-                    hintText: 'Search locations'),
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Theme.of(context).textTheme.bodyMedium?.color,
+                    ),
+                    hintText: 'Search locations',
+                    hintStyle: TextStyle(
+                      color: Theme.of(context).textTheme.bodyMedium?.color,
+                    )),
               ),
               const SizedBox(height: 15),
-              const Row(
+              Row(
                 children: [
-                  Icon(Icons.star),
-                  SizedBox(width: 10),
+                  const Icon(Icons.star),
+                  const SizedBox(width: 10),
                   Text(
                     'Favourite Locations',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(fontWeight: FontWeight.w700),
                   ),
                 ],
               ),
@@ -68,16 +81,17 @@ class SideDrawer extends StatelessWidget {
                         builder: (context) => const ManageLocationsPage()),
                   );
                 },
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Menage Locations',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium
+                          ?.copyWith(fontWeight: FontWeight.w700),
                     ),
-                    Icon(Icons.tune),
+                    const Icon(Icons.tune),
                   ],
                 ),
               ),
@@ -104,7 +118,10 @@ class FavLocationRow extends StatelessWidget {
           size: 15,
         ),
         const SizedBox(width: 5),
-        const Text('Prague'),
+        Text(
+          'Prague',
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
         const Spacer(),
         SvgPicture.asset(
           'assets/sun.svg',
@@ -112,7 +129,10 @@ class FavLocationRow extends StatelessWidget {
           height: 20,
         ),
         const SizedBox(width: 5),
-        const Text('24°')
+        Text(
+          '24°',
+          style: Theme.of(context).textTheme.bodyMedium,
+        )
       ],
     );
   }
