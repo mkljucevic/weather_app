@@ -3,6 +3,7 @@ import 'package:weather_app/components/daily_forecast_card.dart';
 import 'package:weather_app/components/hourly_forecast_card.dart';
 import 'package:weather_app/components/main_weather_display_card.dart';
 import 'package:weather_app/components/side_drawer.dart';
+import 'package:weather_app/components/side_end_drawer.dart';
 import 'package:weather_app/components/sunset_sunrise_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
       //backgroundColor: const Color(0xfff3f3f3),
       key: scaffoldKey,
       drawer: const SideDrawer(),
+      endDrawer: const SideEndDrawer(),
       drawerScrimColor: Colors.transparent,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -44,7 +46,10 @@ class _HomePageState extends State<HomePage> {
                     const Spacer(),
                     const Icon(Icons.calendar_month),
                     const SizedBox(width: 20),
-                    const Icon(Icons.settings),
+                    GestureDetector(
+                      onTap: () => scaffoldKey.currentState?.openEndDrawer(),
+                      child: const Icon(Icons.settings),
+                    ),
                   ],
                 ),
               ),
