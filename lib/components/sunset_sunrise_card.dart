@@ -12,11 +12,17 @@ class SunriseSunsetCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
       ),
       child: Row(
         children: [
-          const Text('Sunrise'),
+          Text(
+            'Sunrise',
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(fontWeight: FontWeight.w600),
+          ),
           const SizedBox(width: 15),
           SvgPicture.asset(
             'assets/sun.svg',
@@ -24,9 +30,18 @@ class SunriseSunsetCard extends StatelessWidget {
             height: 20,
           ),
           const SizedBox(width: 5),
-          const Text('04:54'),
+          Text(
+            '04:54',
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
           const Spacer(),
-          const Text('Sunset'),
+          Text(
+            'Sunset',
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(fontWeight: FontWeight.w600),
+          ),
           const SizedBox(width: 15),
           SvgPicture.asset(
             'assets/moon.svg',
@@ -34,7 +49,10 @@ class SunriseSunsetCard extends StatelessWidget {
             height: 20,
           ),
           const SizedBox(width: 5),
-          const Text('21:06'),
+          Text(
+            '21:10',
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
         ],
       ),
     );

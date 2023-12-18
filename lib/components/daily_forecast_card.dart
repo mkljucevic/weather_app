@@ -11,7 +11,7 @@ class DailyForecastCard extends StatelessWidget {
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
       ),
       child: const Column(
         children: [
@@ -83,22 +83,23 @@ class DailyForecastRow extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(date),
+            Text(date, style: Theme.of(context).textTheme.bodyMedium),
             const SizedBox(width: 8),
-            Text(day),
+            Text(day, style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
         Row(
           children: [
             SvgPicture.asset(iconSrc, width: 20, height: 20),
             const SizedBox(width: 8),
-            const Text('Sunny'),
+            Text('Sunny', style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
-        Text(
-          '$tempLow° $tempHigh°',
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
+        Text('$tempLow° $tempHigh°',
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(fontWeight: FontWeight.w600)),
       ],
     );
   }

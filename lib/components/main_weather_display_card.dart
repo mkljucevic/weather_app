@@ -9,7 +9,7 @@ class MainWeatherDisplayCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(
@@ -17,18 +17,21 @@ class MainWeatherDisplayCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Thu, 07:13'),
+            Text('Thu, 07:13', style: Theme.of(context).textTheme.bodySmall),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       '10°',
-                      style: TextStyle(fontSize: 55),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
-                    Text('Prague'),
+                    Text(
+                      'Prague',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
                   ],
                 ),
                 SvgPicture.asset(
@@ -38,15 +41,16 @@ class MainWeatherDisplayCard extends StatelessWidget {
                 ),
               ],
             ),
+            const Spacer(),
             Center(
               child: DotsIndicator(
                 dotsCount: 4,
                 position: 0,
-                decorator: const DotsDecorator(
-                  size: Size(6, 6),
-                  activeSize: Size(6, 6),
+                decorator: DotsDecorator(
+                  size: const Size(6, 6),
+                  activeSize: const Size(6, 6),
                   color: Colors.grey, // Inactive color
-                  activeColor: Colors.black,
+                  activeColor: Theme.of(context).textTheme.bodyMedium?.color,
                 ),
               ),
             ),

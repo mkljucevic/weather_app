@@ -36,9 +36,9 @@ class _HomePageState extends State<HomePage> {
                       child: const Icon(Icons.menu),
                     ),
                     const SizedBox(width: 20),
-                    const Text(
+                    Text(
                       'Tuesday 25, July',
-                      style: TextStyle(fontFamily: 'Quicksand'),
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     const Spacer(),
                     const Icon(Icons.calendar_month),
