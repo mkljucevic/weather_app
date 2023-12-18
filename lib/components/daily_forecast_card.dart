@@ -7,7 +7,7 @@ class DailyForecastCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 195,
+      height: 210,
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),

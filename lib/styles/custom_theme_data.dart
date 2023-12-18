@@ -28,14 +28,14 @@ final ThemeData cLightThemeData = ThemeData(
 
     // smallest app font
     bodySmall: TextStyle(
-      fontSize: 10,
+      fontSize: 12,
       color: cTextColorLight,
       fontWeight: FontWeight.w400,
     ),
 
     // medium app font
     bodyMedium: TextStyle(
-      fontSize: 14,
+      fontSize: 16,
       color: cTextColorLight,
     ),
 
@@ -74,13 +74,13 @@ final ThemeData cDarkThemeData = ThemeData(
 
     // smallest app font
     bodySmall: TextStyle(
-      fontSize: 10,
+      fontSize: 12,
       color: cTextColorDark,
     ),
 
     // medium app font
     bodyMedium: TextStyle(
-      fontSize: 14,
+      fontSize: 16,
       color: cTextColorDark,
     ),
 
